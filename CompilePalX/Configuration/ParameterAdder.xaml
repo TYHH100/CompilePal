@@ -3,17 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        Title="Parameter Chooser" Height="424" Width="918"  BorderBrush="{DynamicResource MahApps.Brushes.Accent}" BorderThickness="1" >
+        Title="选择参数" Height="424" Width="918"  BorderBrush="{DynamicResource MahApps.Brushes.Accent}" BorderThickness="1" >
     <controls:MetroWindow.WindowButtonCommands>
         <controls:WindowButtonCommands LightCloseButtonStyle="{StaticResource LightButtonStyle}" LightMinButtonStyle="{StaticResource LightButtonStyle}" LightMaxButtonStyle="{StaticResource LightButtonStyle}"/>
     </controls:MetroWindow.WindowButtonCommands>
     <Grid>
         <DataGrid Name="ConfigDataGrid" Margin="10,10,10,10" AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False" ItemsSource="{Binding}" MouseDoubleClick="ConfigDataGrid_MouseUp" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{ Binding Name}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Param" Binding="{ Binding Parameter}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Description" Binding="{ Binding Description}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Issues" Binding="{ Binding Warning}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="名字" Binding="{ Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="参数" Binding="{ Binding Parameter}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="说明" Binding="{ Binding Description}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="问题" Binding="{ Binding Warning}" IsReadOnly="True"/>
             </DataGrid.Columns>
             <DataGrid.GroupStyle>
                 <GroupStyle>

@@ -6,7 +6,7 @@
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:CompilePalX"
         mc:Ignorable="d"
-        Title="Settings"
+        Title="设置"
           IconEdgeMode="Aliased" ShowIconOnTitleBar="False"
           Height="450" Width="800"
           MinHeight="450" MinWidth="800"
@@ -21,14 +21,14 @@
         </Grid.RowDefinitions>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Vertical" FocusManager.FocusedElement="{Binding ElementName=ErrorSourceURL}">
-                <TextBox Template="{StaticResource LabeledTextbox}" Text="{Binding Path=ErrorSourceURL, Mode=TwoWay}" Tag="Error Source" Name="ErrorSourceURL"/>
-                <TextBox Template="{StaticResource LabeledTextbox}" Text="{Binding Path=ErrorCacheExpirationDays , Mode=TwoWay}" Tag="Error Cache Duration" Name="ErrorCacheDurationDays" ToolTip="How many days to cache error information" PreviewTextInput="ErrorCacheDurationDays_PreviewTextInput"/>
+                <TextBox Template="{StaticResource LabeledTextbox}" Text="{Binding Path=ErrorSourceURL, Mode=TwoWay}" Tag="错误源" Name="ErrorSourceURL"/>
+                <TextBox Template="{StaticResource LabeledTextbox}" Text="{Binding Path=ErrorCacheExpirationDays , Mode=TwoWay}" Tag="错误缓存时间" Name="ErrorCacheDurationDays" ToolTip="错误信息缓存多少天" PreviewTextInput="ErrorCacheDurationDays_PreviewTextInput"/>
                 <StackPanel Margin="0, 0, 0, 5" HorizontalAlignment="Left">
-                    <Label Padding="0, 5 5, 5" Margin="0, 0, -5, 0" IsTabStop="False">Play Sound On Compile Completion</Label>
+                    <Label Padding="0, 5 5, 5" Margin="0, 0, -5, 0" IsTabStop="False">编译完成后播放声音提示</Label>
                     <CheckBox IsChecked="{Binding Path=PlaySoundOnCompileCompletion, Mode=TwoWay}" Focusable="True" HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
-        <Button Grid.Row="1" Click="SaveButton_Click">Save</Button>
+        <Button Grid.Row="1" Click="SaveButton_Click">保存</Button>
     </Grid>
 </controls:MetroWindow>

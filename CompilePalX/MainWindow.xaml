@@ -23,7 +23,7 @@
 
     <controls:MetroWindow.LeftWindowCommands>
         <controls:WindowCommands>
-            <Button Click="ConfigBack_OnClick" ToolTip="Open Game Selector" x:Name="ConfigSelectButton">
+            <Button Click="ConfigBack_OnClick" ToolTip="打开选择游戏" x:Name="ConfigSelectButton">
                 <iconPacks:Material Kind="Menu" />
             </Button>
         </controls:WindowCommands>
@@ -34,10 +34,10 @@
             <Button Click="UnsupportedPlatformButton_OnClick" Foreground="{StaticResource CompilePal.Brushes.Warning}" ToolTip="Unsupported Platform" x:Name="UnsupportedPlatformButton" Visibility="Collapsed">
                 <iconPacks:Material Kind="Alert" />
             </Button>
-            <Button Click="BugReportButton_OnClick" ToolTip="Report a bug" x:Name="BugReportButton">
+            <Button Click="BugReportButton_OnClick" ToolTip="报告错误" x:Name="BugReportButton">
                 <iconPacks:Material Kind="Bug" />
             </Button>
-            <Button Click="SettingsButton_Click" ToolTip="Settings" x:Name="SettingsButton">
+            <Button Click="SettingsButton_Click" ToolTip="设置" x:Name="SettingsButton">
                 <iconPacks:Material Kind="Cog" />
             </Button>
         </controls:WindowCommands>
@@ -112,11 +112,11 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="AddMapButton"  Grid.Row="0" Content="Add Map" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="AddMapButton_Click"/>
-        <Button x:Name="RemoveMapButton"  Grid.Row="0" Content="Remove" Margin="0,45,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="RemoveMapButton_Click"/>
+        <Button x:Name="AddMapButton"  Grid.Row="0" Content="添加地图" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="AddMapButton_Click"/>
+        <Button x:Name="RemoveMapButton"  Grid.Row="0" Content="移除" Margin="0,45,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="RemoveMapButton_Click"/>
         <GridSplitter Grid.Row="1" Height="3" HorizontalAlignment="Stretch" Width="512"/>
         <controls:MetroTabControl Grid.Row="2" controls:TabControlHelper.Underlined="SelectedTabItem" controls:TabControlHelper.Transition="LeftReplace" Margin="10,10,10,40">
-            <controls:MetroTabItem Header="CONFIG">
+            <controls:MetroTabItem Header="配置">
                 <Grid Background="{StaticResource CompilePal.Brushes.GridBackground}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" MinWidth="135"/>
@@ -125,7 +125,7 @@
                     </Grid.ColumnDefinitions>
                     <DockPanel Grid.Column="0" Margin="10,10,0,10" Background="{StaticResource CompilePal.Brushes.DockBackground}">
                         <DockPanel DockPanel.Dock="Top" Background="{StaticResource CompilePal.Brushes.GridBackground}" Height="30" Margin="0, -5, 0, 0">
-                            <Button x:Name="AddPresetButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 0, 5" Click="AddPresetButton_Click" ToolTip="Add Preset" DockPanel.Dock="Right">
+                            <Button x:Name="AddPresetButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 0, 5" Click="AddPresetButton_Click" ToolTip="添加预设" DockPanel.Dock="Right">
                                 <iconPacks:Material Kind="Plus" Height="10" Width="10"/>
                             </Button>
                             <ToggleButton x:Name="FilterPresetButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 3, 5" DockPanel.Dock="Right" IsChecked="{Binding ElementName=CompileWindow, Path=PresetFilterEnabled, Mode=OneWay}" Checked="FilterPresetButton_OnChecked" Unchecked="FilterPresetButton_OnChecked">
@@ -138,7 +138,7 @@
                                                         <iconPacks:Material Kind="Filter" Height="10" Width="10"/>
                                                     </Setter.Value>
                                                 </Setter>
-                                                <Setter Property="ToolTip" Value="Filter Presets"/>
+                                                <Setter Property="ToolTip" Value="过滤预设"/>
                                             </Trigger>
                                             <Trigger Property="IsChecked" Value="True">
                                                 <Setter Property="Content">
@@ -147,7 +147,7 @@
                                                     </Setter.Value>
                                                 </Setter>
                                                 <Setter Property="Background" Value="{StaticResource MahApps.Brushes.Gray10}"/>
-                                                <Setter Property="ToolTip" Value="Show All Presets"/>
+                                                <Setter Property="ToolTip" Value="显示所有预设"/>
                                             </Trigger>
                                             <Trigger Property="IsMouseOver" Value="True">
                                                 <Setter Property="Background" Value="{StaticResource MahApps.Brushes.Button.Square.Background.MouseOver}"/>
@@ -156,7 +156,7 @@
                                     </Style>
                                 </ToggleButton.Style>
                             </ToggleButton>
-                            <TextBlock FontSize="16" Margin="0, 0, 0, 5" FontWeight="SemiBold">Preset</TextBlock>
+                            <TextBlock FontSize="16" Margin="0, 0, 0, 5" FontWeight="SemiBold">预设</TextBlock>
                         </DockPanel>
                         <ListBox Name="PresetConfigListBox" SelectionChanged="PresetConfigListBox_SelectionChanged" SelectionMode="Single" ItemContainerStyle="{StaticResource GroupListBoxStyle}">
                             <ListBox.ItemTemplate>
@@ -171,9 +171,9 @@
                                             <iconPacks:PackIconMaterial Kind="DotsVertical" Height="8" Width="8"/>
                                             <Button.ContextMenu>
                                                 <ContextMenu Name="PresetActionMenu" Placement="Bottom">
-                                                    <MenuItem Header="Edit" Click="EditPresetButton_OnClick" />
-                                                    <MenuItem Header="Clone" Click="ClonePresetButton_OnClick"/>
-                                                    <MenuItem Header="Delete" Click="RemovePresetButton_OnClick"/>
+                                                    <MenuItem Header="编辑" Click="EditPresetButton_OnClick" />
+                                                    <MenuItem Header="克隆" Click="ClonePresetButton_OnClick"/>
+                                                    <MenuItem Header="删除" Click="RemovePresetButton_OnClick"/>
                                                 </ContextMenu>
                                             </Button.ContextMenu>
                                             <Button.Style>
@@ -294,7 +294,7 @@
                                             <TextBlock x:Name="PresetHeaderBlock" FontWeight="Bold" FontSize="12" Text="{Binding Name}" Margin="5, 2, 5, 0"/>
                                             <DataTemplate.Triggers>
                                                 <DataTrigger Binding="{Binding Name}" Value="{x:Null}">
-                                                    <Setter TargetName="PresetHeaderBlock" Property="Text" Value="Global"/>
+                                                    <Setter TargetName="PresetHeaderBlock" Property="Text" Value="全局"/>
                                                 </DataTrigger>
                                                 <DataTrigger Binding="{Binding Items.Groups.Count, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" Value="1">
                                                     <Setter TargetName="PresetHeaderBlock" Property="Visibility" Value="Collapsed"/>
@@ -308,13 +308,13 @@
                     </DockPanel>
                     <DockPanel Grid.Column="1" Margin="10,10,0,10" Background="{StaticResource CompilePal.Brushes.DockBackground}">
                         <DockPanel DockPanel.Dock="Top" Background="{StaticResource CompilePal.Brushes.GridBackground}" Height="30" Margin="0, -5, 0, 0">
-                            <Button x:Name="AddProcessesButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 0, 5" Click="AddProcessButton_Click"  DockPanel.Dock="Right" ToolTip="Add Process">
+                            <Button x:Name="AddProcessesButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 0, 5" Click="AddProcessButton_Click"  DockPanel.Dock="Right" ToolTip="添加步骤">
                                 <iconPacks:Material Kind="Plus" Height="10" Width="10"/>
                             </Button>
-                            <Button x:Name="RemoveProcessesButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 3, 5" Click="RemoveProcessButton_Click" DockPanel.Dock="Right" ToolTip="Remove Process">
+                            <Button x:Name="RemoveProcessesButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 3, 5" Click="RemoveProcessButton_Click" DockPanel.Dock="Right" ToolTip="删除指定的步骤">
                                 <iconPacks:Material Kind="Minus" Height="10" Width="10"/>
                             </Button>
-                            <TextBlock FontSize="16" Margin="0, 0, 0, 5" FontWeight="SemiBold">Process</TextBlock>
+                            <TextBlock FontSize="16" Margin="0, 0, 0, 5" FontWeight="SemiBold">流程</TextBlock>
                         </DockPanel>
                         <ListBox x:Name ="CompileProcessesListBox" Grid.Row="0" SelectionChanged="CompileProcessesListBox_SelectionChanged">
                             <ListBox.ItemTemplate>
@@ -372,18 +372,18 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <DockPanel Background="{StaticResource CompilePal.Brushes.GridBackground}" Height="25" Margin="10, 0, 10, 0">
-                            <TextBlock TextAlignment="Right" FontSize="16" Margin="0, 0, 0, 0" FontWeight="SemiBold" DockPanel.Dock="Left">Parameters</TextBlock>
-                            <Button Name="AddParameterButton" DockPanel.Dock="Right" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 3, 0" Click="AddParameterButton_Click" ToolTip="Add Parameter">
+                            <TextBlock TextAlignment="Right" FontSize="16" Margin="0, 0, 0, 0" FontWeight="SemiBold" DockPanel.Dock="Left">参数</TextBlock>
+                            <Button Name="AddParameterButton" DockPanel.Dock="Right" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 3, 0" Click="AddParameterButton_Click" ToolTip="添加参数">
                                 <iconPacks:Material Kind="Plus" Height="10" Width="10"/>
                             </Button>
-                            <Button Name="RemoveParameterButton" DockPanel.Dock="Right" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 3, 0" Click="RemoveParameterButton_OnClickParameterButton_Click" ToolTip="Remove Parameter">
+                            <Button Name="RemoveParameterButton" DockPanel.Dock="Right" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 3, 0" Click="RemoveParameterButton_OnClickParameterButton_Click" ToolTip="删除指定参数">
                                 <iconPacks:Material Kind="Minus" Height="10" Width="10"/>
                             </Button>
                             <TextBox Name="ParametersTextBox" Margin="20,0, 20,0" IsEnabled="True" IsReadOnly="True" Background="{StaticResource MahApps.Brushes.Gray.SemiTransparent}" FontWeight="DemiBold" BorderThickness="0"/>
                         </DockPanel>
                         <DataGrid Grid.Row ="1" Name="ConfigDataGrid" Margin="10,0,10,10" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding}">
                             <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Name" IsReadOnly="True">
+                                <DataGridTemplateColumn Header="名字" IsReadOnly="True">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
@@ -456,8 +456,8 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Header="Description" Binding="{ Binding Description}" IsReadOnly="True"/>
-                                <DataGridTextColumn Header="Warnings" Binding="{ Binding Warning}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="说明" Binding="{ Binding Description}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="警告" Binding="{ Binding Warning}" IsReadOnly="True"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
@@ -529,7 +529,7 @@
                     </Grid>
                 </Grid>
             </controls:MetroTabItem>
-            <controls:MetroTabItem Name="OutputTab" Header="OUTPUT">
+            <controls:MetroTabItem Name="OutputTab" Header="输出">
                 <Grid Background="{StaticResource CompilePal.Brushes.GridBackground}">
                     <RichTextBox IsReadOnly="True" x:Name="CompileOutputTextbox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" BorderThickness="0" Margin="10,10,10,10" FontFamily="Cascadia Code PL, Segoe UI, Lucida Sans Unicode, Verdana" Typography.StandardLigatures="True" IsReadOnlyCaretVisible="True" Block.LineHeight="2" IsDocumentEnabled="True">
                         <RichTextBox.Document>
@@ -544,7 +544,7 @@
         </controls:MetroTabControl>
         <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" Margin="10,0,10,0">
             <ProgressBar Name="CompileProgressBar" Margin="0,0,0,7" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="200"/>
-            <Button Name="CopyButton" Margin="5,10,0,6" Width="35" Click="CopyButton_OnClick" ToolTip="Copy Output">
+            <Button Name="CopyButton" Margin="5,10,0,6" Width="35" Click="CopyButton_OnClick" ToolTip="复制输出">
                 <iconPacks:Material Height="15" Kind="ContentCopy" />
             </Button>
             <Button Name="CompileStartStopButton" Content="Compile" Margin="5,10,0,6" Width="75" Click="CompileStartStopButton_OnClick" IsEnabled="{Binding ElementName=MapListBox, Path=Items.Count}"/>

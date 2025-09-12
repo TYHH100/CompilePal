@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        Title="Game Selector" Height="444" Width="640"
+        Title="选择游戏" Height="444" Width="640"
                       BorderBrush="{DynamicResource MahApps.Brushes.Accent}" BorderThickness="1"
                       IconEdgeMode="Aliased" Icon="..\CompilePalIcon.ico" ShowIconOnTitleBar="False" >
     <controls:MetroWindow.WindowButtonCommands>
@@ -15,10 +15,10 @@
             <Grid HorizontalAlignment="Center" Margin="0, -40, 0, 20">
                 <iconPacks:Material Kind="HelpRhombus" Height="40" Width="40"/>
             </Grid>
-            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="14">No Game Configurations Found</TextBlock>
-            <TextBlock HorizontalAlignment="Center" Margin="0, 5, 0,10">Launch Hammer for the game you want to compile for and click <Hyperlink Foreground="{StaticResource CompilePal.Brushes.Link}" Click="RefreshButton_OnClick">refresh</Hyperlink></TextBlock>
-            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="14">Or</TextBlock>
-            <Button Margin="0, 10, 0, 0" Click="AddButton_OnClick">Add Game</Button>
+            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="14">未找到游戏配置</TextBlock>
+            <TextBlock HorizontalAlignment="Center" Margin="0, 5, 0,10">打开要编译游戏的锤子(Hammer),然后点击 <Hyperlink Foreground="{StaticResource CompilePal.Brushes.Link}" Click="RefreshButton_OnClick">刷新</Hyperlink></TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="14">或者</TextBlock>
+            <Button Margin="0, 10, 0, 0" Click="AddButton_OnClick">添加游戏</Button>
         </StackPanel>
         <Grid x:Name="FilledState">
             <Grid Margin="10, 10, 10, 40">
@@ -28,8 +28,8 @@
                 </Grid.ColumnDefinitions>
                 <DataGrid x:Name="GameGrid" Margin="0,0,5,0" HorizontalContentAlignment="Stretch" AutoGenerateColumns="False" CanUserAddRows="False" ItemsSource="{Binding}" MouseDoubleClick="Button_Click" SelectionMode="Single">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" Binding="{ Binding Name}" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="Path" Binding="{ Binding GameFolder}" IsReadOnly="True" Width="*"/>
+                        <DataGridTextColumn Header="名字" Binding="{ Binding Name}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="路径" Binding="{ Binding GameFolder}" IsReadOnly="True" Width="*"/>
                         <DataGridTemplateColumn Width="auto" CanUserResize="False">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -37,8 +37,8 @@
                                         <iconPacks:PackIconMaterial Kind="DotsVertical" Height="8" Width="8"/>
                                         <Button.ContextMenu>
                                             <ContextMenu Name="PresetActionMenu" Placement="Bottom">
-                                                <MenuItem Header="Edit" Click="EditButton_OnClick" />
-                                                <MenuItem Header="Delete" Click="DeleteButton_OnClick"/>
+                                                <MenuItem Header="编辑" Click="EditButton_OnClick" />
+                                                <MenuItem Header="删除" Click="DeleteButton_OnClick"/>
                                             </ContextMenu>
                                         </Button.ContextMenu>
                                         <Button.Style>
@@ -164,11 +164,11 @@
                     </DataGrid.Columns>
                 </DataGrid>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="0, -1, 0, 0" HorizontalAlignment="Right">
-                    <Button Name="RefreshButton" Margin="0, 0, 5, 0" Height="20" Width="25" Padding="-4" VerticalAlignment="Top" Click="RefreshButton_OnClick" ToolTip="Refresh Game Configurations"><iconPacks:Material Kind="Refresh" Height="13" Width="13"/></Button>
-                    <Button Name="AddButton" Height="20" Width="25" Padding="-4" VerticalAlignment="Top" Click="AddButton_OnClick" ToolTip="Add Game Configuration"><iconPacks:Material Kind="Plus" Height="13" Width="13"/></Button>
+                    <Button Name="RefreshButton" Margin="0, 0, 5, 0" Height="20" Width="25" Padding="-4" VerticalAlignment="Top" Click="RefreshButton_OnClick" ToolTip="刷新游戏配置"><iconPacks:Material Kind="Refresh" Height="13" Width="13"/></Button>
+                    <Button Name="AddButton" Height="20" Width="25" Padding="-4" VerticalAlignment="Top" Click="AddButton_OnClick" ToolTip="添加游戏配置"><iconPacks:Material Kind="Plus" Height="13" Width="13"/></Button>
                 </StackPanel>
             </Grid>
-            <Button Name="LaunchButton" Content="Launch" Margin="0,0,10,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="Button_Click" IsEnabled="{Binding ElementName=GameGrid, Path=SelectedItems.Count}"/>
+            <Button Name="LaunchButton" Content="确认" Margin="0,0,10,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="Button_Click" IsEnabled="{Binding ElementName=GameGrid, Path=SelectedItems.Count}"/>
         </Grid>
     </Grid>
 </controls:MetroWindow>

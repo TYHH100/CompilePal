@@ -15,19 +15,19 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <StackPanel Margin="20,10,20,0" VerticalAlignment="Top">
-            <Label Padding="0, 5 5, 5" Content="Preset Name" IsTabStop="False"/>
+            <Label Padding="0, 5 5, 5" Content="预设名字" IsTabStop="False"/>
             <TextBox Name="InputTextBox" Height="24" Text="{Binding Path=Name, Mode=TwoWay}"/>
             <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
                 <CheckBox Name="IsMapSpecificCheckbox" controls:CheckBoxHelper.CheckBackgroundFillUncheckedDisabled="{StaticResource CompilePal.Brushes.CheckboxDisabled}"/>
-                <Label Content="Map Filter" IsTabStop="False" Margin="-5, 0, -5, 0"/>
+                <Label Content="地图过滤" IsTabStop="False" Margin="-5, 0, -5, 0"/>
             </StackPanel>
             <StackPanel>
-                <Label Padding="0, 10 -5, 5" Margin="0, 0, 0, 5" Content="Filter Name" IsTabStop="False"/>
+                <Label Padding="0, 10 -5, 5" Margin="0, 0, 0, 5" Content="过滤名称" IsTabStop="False"/>
                 <TextBox Text="{Binding Path=Map, Mode=TwoWay}"/>
 
                 <StackPanel Orientation="Horizontal" Margin="0, 5, 5, 5">
-                    <Label Padding="0, 5 -5, 5" Content="Match" IsTabStop="False"/>
-                    <Grid Background="Transparent" Margin="2, 2, 0, 0" Height="12" ToolTip="Preset will only appear for maps that match the regex">
+                    <Label Padding="0, 5 -5, 5" Content="匹配" IsTabStop="False"/>
+                    <Grid Background="Transparent" Margin="2, 2, 0, 0" Height="12" ToolTip="只有在正则表达式匹配的地图上才会出现预设">
                         <iconPacks:PackIconMaterial Height="12" Kind="HelpCircleOutline"  VerticalAlignment="Center" Foreground="{StaticResource CompilePal.Brushes.Link}" IsTabStop="False">
                             <iconPacks:PackIconMaterial.Style>
                                 <Style TargetType="iconPacks:PackIconMaterial">
@@ -61,7 +61,7 @@
                 <ColumnDefinition Width="25*"/>
             </Grid.ColumnDefinitions>
             <Button Name="OKButton" Grid.Column ="1" Width="80" Height="24" Click="OKButton_OnClick" IsEnabled="{Binding ElementName=InputTextBox, Path=Text.Length}">OK</Button>
-            <Button Name="CancelButton" Grid.Column ="2" Width="80" Height="24" Click="CancelButton_OnClick">Cancel</Button>
+            <Button Name="CancelButton" Grid.Column ="2" Width="80" Height="24" Click="CancelButton_OnClick">取消</Button>
         </Grid>
 
     </Grid>

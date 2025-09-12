@@ -16,7 +16,7 @@ namespace CompilePalX
             // dynamically get IsCompatible property
             bool? res = item.GetType().GetProperty("IsCompatible")?.GetValue(item, null) as bool?;
 
-            return res == true ? "IsCompatible" : "Incompatible";
+            return res == true ? "IsCompatible" : "不兼容";
         }
     }
 }

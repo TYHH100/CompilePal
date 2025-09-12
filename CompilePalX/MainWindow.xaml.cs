@@ -542,7 +542,7 @@ namespace CompilePalX
 
         private void AddPresetButton_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new PresetDialog("Add Preset", MapListBox.SelectedItem as Map);
+            var dialog = new PresetDialog("添加预设", MapListBox.SelectedItem as Map);
             dialog.ShowDialog();
 
             if (!dialog.Result)
@@ -565,7 +565,7 @@ namespace CompilePalX
                 return;
             }
 
-            var dialog = new PresetDialog("Clone Preset", MapListBox.SelectedItem as Map);
+            var dialog = new PresetDialog("克隆预设", MapListBox.SelectedItem as Map);
             dialog.ShowDialog();
 
             if (!dialog.Result)
@@ -589,7 +589,7 @@ namespace CompilePalX
                 return;
             }
             
-            var dialog = new PresetDialog("Edit Preset", MapListBox.SelectedItem as Map, (Preset)selectedPreset.Clone());
+            var dialog = new PresetDialog("编辑预设", MapListBox.SelectedItem as Map, (Preset)selectedPreset.Clone());
             dialog.ShowDialog();
 
             if (!dialog.Result)
@@ -622,14 +622,14 @@ namespace CompilePalX
 
             var dialogSettings = new MetroDialogSettings()
             {
-                AffirmativeButtonText = "Delete",
-                NegativeButtonText = "Cancel",
+                AffirmativeButtonText = "删除",
+                NegativeButtonText = "取消",
                 AnimateHide = false,
                 AnimateShow = false,
                 DefaultButtonFocus = MessageDialogResult.Affirmative,
             };
 
-            var result = await this.ShowMessageAsync($"Delete Preset", $"Are you sure you want to delete preset {selectedPreset.Name}{(selectedPreset.Map != null ? $" ({selectedPreset.Map})" : "")}?",
+            var result = await this.ShowMessageAsync($"删除预设", $"您确认要删除 {selectedPreset.Name}{(selectedPreset.Map != null ? $" ({selectedPreset.Map})" : "")} 预设吗?",
                 MessageDialogStyle.AffirmativeAndNegative, dialogSettings);
 
             if (result != MessageDialogResult.Affirmative)
@@ -818,7 +818,7 @@ namespace CompilePalX
                 dialog.InitialDirectory = GameConfigurationManager.GameConfiguration.SDKMapFolder;
 
             dialog.Multiselect = true;
-            dialog.Filter = "Map Files (*.vmf;*.vmm;*.bsp)|*.vmf;*.vmm;*.bsp|All Files (*.*)|*.*";
+            dialog.Filter = "地图文件 (*.vmf;*.vmm;*.bsp)|*.vmf;*.vmm;*.bsp|All Files (*.*)|*.*";
 
             try
             {

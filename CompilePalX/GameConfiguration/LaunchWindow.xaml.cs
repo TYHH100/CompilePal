@@ -154,14 +154,14 @@ namespace CompilePalX
 
             var dialogSettings = new MetroDialogSettings()
             {
-                AffirmativeButtonText = "Delete",
-                NegativeButtonText = "Cancel",
+                AffirmativeButtonText = "删除",
+                NegativeButtonText = "取消",
                 AnimateHide = false,
                 AnimateShow = false,
                 DefaultButtonFocus = MessageDialogResult.Affirmative,
             };
 
-            var result = await this.ShowMessageAsync($"Delete Game", $"Are you sure you want to delete {configuration.Name}?",
+            var result = await this.ShowMessageAsync($"删除游戏", $"您确认要删除 {configuration.Name} 吗?",
                 MessageDialogStyle.AffirmativeAndNegative, dialogSettings);
 
             if (result != MessageDialogResult.Affirmative)
