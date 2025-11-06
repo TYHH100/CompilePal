@@ -308,10 +308,10 @@
                     </DockPanel>
                     <DockPanel Grid.Column="1" Margin="10,10,0,10" Background="{StaticResource CompilePal.Brushes.DockBackground}">
                         <DockPanel DockPanel.Dock="Top" Background="{StaticResource CompilePal.Brushes.GridBackground}" Height="30" Margin="0, -5, 0, 0">
-                            <Button x:Name="AddProcessesButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 0, 5" Click="AddProcessButton_Click"  DockPanel.Dock="Right" ToolTip="添加步骤">
+                            <Button x:Name="AddProcessesButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 0, 5" Click="AddProcessButton_Click"  DockPanel.Dock="Right" ToolTip="添加流程">
                                 <iconPacks:Material Kind="Plus" Height="10" Width="10"/>
                             </Button>
-                            <Button x:Name="RemoveProcessesButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 3, 5" Click="RemoveProcessButton_Click" DockPanel.Dock="Right" ToolTip="删除指定的步骤">
+                            <Button x:Name="RemoveProcessesButton" MinHeight="25" Height="25" Width="25" Padding="0" Margin="0, 0, 3, 5" Click="RemoveProcessButton_Click" DockPanel.Dock="Right" ToolTip="删除指定的流程">
                                 <iconPacks:Material Kind="Minus" Height="10" Width="10"/>
                             </Button>
                             <TextBlock FontSize="16" Margin="0, 0, 0, 5" FontWeight="SemiBold">流程</TextBlock>
@@ -547,7 +547,7 @@
             <Button Name="CopyButton" Margin="5,10,0,6" Width="35" Click="CopyButton_OnClick" ToolTip="复制输出">
                 <iconPacks:Material Height="15" Kind="ContentCopy" />
             </Button>
-            <Button Name="CompileStartStopButton" Content="Compile" Margin="5,10,0,6" Width="75" Click="CompileStartStopButton_OnClick" IsEnabled="{Binding ElementName=MapListBox, Path=Items.Count}"/>
+            <Button Name="CompileStartStopButton" Content="编译" Margin="5,10,0,6" Width="75" Click="CompileStartStopButton_OnClick" IsEnabled="{Binding ElementName=MapListBox, Path=Items.Count}"/>
         </StackPanel>
         <Label Name="UpdateLabel" Visibility="Collapsed"  Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10" MouseLeftButtonUp="UpdateLabel_MouseLeftButtonUp" >
             <Hyperlink Name="UpdateHyperLink" NavigateUri="https://github.com/ruarai/CompilePal/releases/latest" RequestNavigate="UpdateHyperLink_OnRequestNavigate" Foreground="{StaticResource CompilePal.Brushes.Link}"/>

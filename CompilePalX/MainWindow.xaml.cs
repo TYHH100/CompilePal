@@ -367,7 +367,7 @@ namespace CompilePalX
             CompileProgressBar.Value = progress;
 
             if (progress < 0 || progress >= 100)
-                CompileStartStopButton.Content = "Compile";
+                CompileStartStopButton.Content = "编译";
         }
 
         void ProgressManager_TitleChange(string title)
@@ -850,7 +850,7 @@ namespace CompilePalX
         {
             CompilingManager.ToggleCompileState();
 
-            CompileStartStopButton.Content = (string)CompileStartStopButton.Content == "Compile" ? "Cancel" : "Compile";
+            CompileStartStopButton.Content = (string)CompileStartStopButton.Content == "编译" ? "终止" : "Compile";
 
             OutputTab.Focus();
         }
@@ -1039,7 +1039,7 @@ namespace CompilePalX
         private void TickElapsedTimer(object sender, EventArgs e)
         {
             var time = CompilingManager.GetTime().Elapsed;
-            TimeElapsedLabel.Content = $"Time Elapsed: {(int) time.TotalHours:00}:{time:mm}:{time:ss}";
+            TimeElapsedLabel.Content = $"用时: {(int) time.TotalHours:00}:{time:mm}:{time:ss}";
         }
 
         private void CopyButton_OnClick(object sender, RoutedEventArgs e)
